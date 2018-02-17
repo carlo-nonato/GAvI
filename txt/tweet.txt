@@ -1,0 +1,106 @@
+TextTW : RT @VanGoghDetails: View of the Church of Saint-Paul-De-Mausole, 1889. #vangogh #art #arthistory https://t.co/bzJTSWlEjS
+Tweetid : 809454646213410816
+Screen-name : mykololo
+Username : Laurent S
+Followers-count : 240
+Following-count : 527
+Statuses-count : 16285
+Favourite-count : 130
+Geo-enabled : False
+Created-at : Thu Dec 15 17:46:41 +0000 2016
+Lang : en
+Retweet_count : 0
+Coordinates : None
+Favorite : 0
+Source : <a href="http://twitter.com/download/android" rel="nofollow">Twitter for Android</a>
+Place : None
+Favorited-count : 13
+Retweet-count : 12
+Username-author : Van Gogh Details
+Created-at-author : Thu Dec 15 17:20:26 +0000 2016
+Screen-name-author : VanGoghDetails
+Followers-count-author : 2504
+Following-count-author : 217
+Statuses-author : 508
+Favourite-count-author : 130
+
+TextTW : RT @VanGoghDetails: View of the Church of Saint-Paul-De-Mausole, 1889. #vangogh #art #arthistory https://t.co/bzJTSWlEjS
+Tweetid : 809454687908982784
+Screen-name : artgully
+Username : Art Gully
+Followers-count : 7204
+Following-count : 7522
+Statuses-count : 7379
+Favourite-count : 1549
+Geo-enabled : False
+Created-at : Thu Dec 15 17:46:51 +0000 2016
+Lang : en
+Retweet_count : 0
+Coordinates : None
+Favorite : 0
+Source : <a href="https://www.facebook.com/artgully" rel="nofollow">ArtGully Tweet Bot</a>
+Place : None
+Favorited-count : 13
+Retweet-count : 13
+Username-author : Van Gogh Details
+Created-at-author : Thu Dec 15 17:20:26 +0000 2016
+Screen-name-author : VanGoghDetails
+Followers-count-author : 2504
+Following-count-author : 217
+Statuses-author : 508
+Favourite-count-author : 1549
+
+TextTW : RT @ZaraTwain: Jouez, en bons bouffons, la comédie humaine;
+Je vous ai trop connus pour être de vos gens.
+
+#Musset…a
+Tweetid : 809453728797433856
+Screen-name : Choco_Sandy1
+Username : Sαɴdrα
+Followers-count : 18075
+Following-count : 168
+Statuses-count : 77379
+Favourite-count : 48940
+Geo-enabled : True
+Created-at : Thu Dec 15 17:43:02 +0000 2016
+Lang : fr
+Retweet_count : 0
+Coordinates : None
+Favorite : 0
+Source : <a href="http://twitter.com/download/android" rel="nofollow">Twitter for Android</a>
+Place : None
+Favorited-count : 30
+Retweet-count : 23
+Username-author : Zara
+Created-at-author : Sun Dec 11 20:19:16 +0000 2016
+Screen-name-author : ZaraTwain
+Followers-count-author : 7659
+Following-count-author : 3270
+Statuses-author : 46107
+Favourite-count-author : 48940
+
+TextTW : RT @VanGoghDetails: View of the Church of Saint-Paul-De-Mausole, 1889. #vangogh #art #arthistory https://t.co/bzJTSWlEjS
+Tweetid : 809454424397582336
+Screen-name : jourbizzarre
+Username : roid'1jour
+Followers-count : 453
+Following-count : 542
+Statuses-count : 20020
+Favourite-count : 2313
+Geo-enabled : False
+Created-at : Thu Dec 15 17:45:48 +0000 2016
+Lang : en
+Retweet_count : 0
+Coordinates : None
+Favorite : 0
+Source : <a href="http://twitter.com" rel="nofollow">Twitter Web Client</a>
+Place : None
+Favorited-count : 12
+Retweet-count : 11
+Username-author : Van Gogh Details
+Created-at-author : Thu Dec 15 17:20:26 +0000 2016
+Screen-name-author : VanGoghDetails
+Followers-count-author : 2504
+Following-count-author : 217
+Statuses-author : 508
+Favourite-count-author : 2313
