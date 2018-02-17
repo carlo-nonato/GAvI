@@ -1,0 +1,8 @@
+CREATED_AT = 'Created-at'
+CREATED_AT_AUTHOR = 'Created-at-author'
+FAVORITED_COUNT = 'Favorited-count'
+LANG = 'Lang'
+RETWEET_COUNT = 'Retweet-count'
+TEXT = 'TextTW'
+USERNAME = 'Username'
+USERNAME_AUTHOR = 'Username-author'
