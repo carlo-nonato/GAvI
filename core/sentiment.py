@@ -3,12 +3,6 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from .utils import *
 from . import match, fields
 
-DEFAULT_INPUT_FILE = match.DEFAULT_OUTPUT_FILE
-DEFAULT_OUTPUT_FILE = 'out/sentiment'
-DEFAULT_OUTPUT_TXT_FILE = 'out/sentiment.txt'
-
-@optional_input(DEFAULT_INPUT_FILE)
-@optional_output(DEFAULT_OUTPUT_FILE, DEFAULT_OUTPUT_TXT_FILE)
 def sentiment(tweets):
     """Basic sentiment analysis"""
 

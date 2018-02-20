@@ -2,8 +2,8 @@ from nltk.corpus import twitter_samples
 from nltk.tokenize import TweetTokenizer
 from nltk.classify import NaiveBayesClassifier
 
-##from .utils import *
-##from . import fields
+from .utils import *
+from . import fields
 
 def tokenize(text):
     tokenizer = TweetTokenizer()

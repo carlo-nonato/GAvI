@@ -1,13 +1,31 @@
-places = (('British', 1), ('Museum', 1), ('London', 0.6),
-          : South Africa art nation
-Tate Gallery London : Wilfredo Lam
-National Gallery London : Beyond Caravaggio
-Louvre Paris : Miroirs
-Centre Pompidou Paris : Renè Magritte
-Milan Museum : Escher
-Uffizi Firenze : Alluvione Uffizi
-Palazzo Diamanti Ferrara : Orlando Furioso
-Palazzo Albergati Bologna : The Gelman Collection
-Albertina Museum Wien : Seurat, Signac, Van Gogh
-Guggenheim New York : Agnes Martin
-MoMA New York : A Revolutionary impulse
+places = [{'british': 0.5, 'museum': 0.5, 'london': 0.6},
+          {'tate': 0.5, 'gallery': 1/3, 'london': 0.6},
+          {'national': 0.4, 'gallery': 0.4, 'london': 0.6},
+          {'louvre': 0.5, 'paris': 2/3},
+          {'centre': 0.2, 'pompidou': 0.8, 'paris': 2/3},
+          {'milan': 0.7, ('museum', 'museo'): 0.3, ('royal', 'reale'): 0.4,
+           ('palace', 'palazzo'): 0.4},
+          {'uffizi': 0.6, ('florence', 'firenze'): 0.7},
+          {('palace', 'palazzo'): 0.5, ('diamonds', 'diamanti'): 0.5,
+           'ferrara': 0.7},
+          {('palace', 'palazzo'): 0.5, 'albergati': 0.5, 'bologna': 0.7},
+          {'albertina': 0.5, 'museum': 0.4, 'wien': 0.7},
+          {'guggenheim': 2/3, 'museum': 0.2, 'new': 0.3, 'york': 0.3},
+          {'moma': 0.6, 'modern': 0.3, 'art': 0.2, 'museum': 0.3, 'new': 0.3,
+           'york': 0.3}]
+
+contents = [{'south': 1/3, 'africa': 0.5,  'art': 0.2, 'nation': 0.2,
+             'zulu': 0.5},
+            {'wifredo': 0.8, 'lam': 0.2},
+            {'beyond': 0.4, 'caravaggio': 0.8},
+            {('miroirs', 'mirrors'): 1},
+            {'renè': 1/4, 'magritte': 3/4},
+            {'escher': 1},
+            {('flood', 'alluvione'): 1},
+            {'orlando': 0.7, ('furious', 'furioso'): 0.7},
+            {'gelman': 0.8, 'collection': 0.2, 'frida': 0.8, 'kahlo': 0.8,
+             'mexic': 0.4},
+            {'seurat': 1/3, 'signac': 1/3, 'van': 0.2, 'gogh': 0.2},
+            {'agnes': 0.6, 'martin': 0.6},
+            {'revolutionary': 0.4, 'impulse': 0.4, 'rise': 0.2,
+             'russian': 0.3, 'avant-garde': 0.3}]

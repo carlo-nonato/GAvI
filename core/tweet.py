@@ -11,11 +11,14 @@ class TweetText(str):
     """Class that represents the text of a tweet.
        Removes RTs headings and compares dealing with truncations"""
 
-    text_pattern = re.compile('(RT \S*: )*(.*)', re.DOTALL)
+    text_pattern = re.compile('((?:RT \S*: )*)(.*)', re.DOTALL)
 
     def __new__(cls, text):
-        return str.__new__(cls,
-                           cls.text_pattern.match(text.rstrip('…')).group(2))    
+        match = cls.text_pattern.match(text.rstrip('…'))
+        headings, text = match.group(1, 2)
+        obj = str.__new__(cls, text)
+        obj.headings = headings
+        return obj
 
     def __eq__(self, other):
         return self.startswith(other) or other.startswith(self)
@@ -62,12 +65,15 @@ class Tweet(dict):
         if self[fields.LANG] == lang:
             return
 
-        text = self.non_bmp_pattern.sub('', self.text)
+        text = self.non_bmp_pattern.sub('', self[fields.TEXT])
         src_lang = (self[fields.LANG]
                     if self[fields.LANG] != UNKNOWN_LANG else AUTO_LANG)
-        self._text = self.translator.translate(text,
-                                               src=src_lang,
-                                               dest=lang).text
+        self._text = TweetText(self.translator.translate(text,
+                                                         src=src_lang,
+                                                         dest=lang).text)
+
+    def text_with_headings(self):
+        return self.text.headings + self.text
 
     def retweet_count(self):
         if not self.retweets:

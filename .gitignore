@@ -103,13 +103,6 @@ ENV/
 # PyCharm
 .idea
 
-# Txts
-txt/
-!txt/mini_mostre.txt
-!txt/mostre.txt
-!txt/startedSet.txt
-!txt/tweet.txt
-
 # Output files
 out/
 
