@@ -3,8 +3,8 @@ import os
 
 from .utils import *
 
-def join(pathname, output_file):
-    """Joins multiple binary files"""
+def join_tweets(pathname, output_file):
+    """Joins multiple tweets binary files"""
     
     tweets = []
     for filename in sorted(glob.glob(pathname + '*'),

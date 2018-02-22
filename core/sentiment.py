@@ -9,7 +9,8 @@ def sentiment(tweets):
     sia = SentimentIntensityAnalyzer()
     
     for tweet in tweets:
-        tweet['polarity'] = sia.polarity_scores(tweet[fields.TEXT])
+        polarity = sia.polarity_scores(tweet.text_with_headings())['compound']
+        
 
     return tweets
 

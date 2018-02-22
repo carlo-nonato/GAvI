@@ -2,9 +2,15 @@ import re
 from nltk.corpus import stopwords
 
 from .utils import get_io_args, load_tweets, dump_tweets
-from . import fields, exhibitions
+from .exhibitions import PLACES, CONTENTS, HASHTAGS
+from . import fields
+
+THRESHOLD = 0.3
 
 def similarity(weighted_tokens, text):
+    """Compute the similarity between weighted tokens dictionary and a
+       string"""
+    
     sim = 0
     for token, weight in weighted_tokens.items():
         if isinstance(token, tuple):
@@ -17,22 +23,23 @@ def tag(tweets):
     """Tries to tag each tweet with one exhibition"""
 
     out_tweets = []
-    matched = False
     for tweet in tweets:
-        text = tweet.text_with_headings().lower()
-        tweet.exhibition = ''
-        for place, content in zip(exhibitions.places, exhibitions.contents):
+        # headings contain username informations. Museums can be cited here.
+        text = tweet.text.with_headings().lower()
+        # search for a match with one exhibition
+        for exh, (place, content, hashtags) in enumerate(zip(PLACES,
+                                                             CONTENTS,
+                                                             HASHTAGS)):
             place_similarity = similarity(place, text)
             content_similarity = similarity(content, text)
-            if place_similarity*content_similarity > 0.2:
-                tweet.exhibition += (' '.join(str(x) for x in place) + ' ' +
-                                     str(place_similarity) + ' * ' +
-                                     str(content_similarity) + ' = ' +
-                                     str(place_similarity*content_similarity))
-                matched = True
-        if matched:
-            out_tweets.append(tweet)
-            matched = False
+            # if one of the hashtags is found or if threshold is exceeded:
+            # tag the tweet and go to te next one
+            if (any(hashtag in tweet.hashtags for hashtag in hashtags)) or \
+                   (place_similarity*content_similarity > THRESHOLD):
+                tweet.exhibition = exh
+                out_tweets.append(tweet)
+                break
+
     return out_tweets
 
 if __name__ == "__main__":
