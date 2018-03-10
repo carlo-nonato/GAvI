@@ -44,7 +44,7 @@ HASHTAGS = [['#southafricanart'],
             [],
             []]
 
-EXHIBITION_TO_STRING = [
+TITLES = [
     'South Africa: The Art of a Nation',
     'Wifredo Lam',
     'Beyond Caravaggio',

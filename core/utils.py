@@ -1,13 +1,18 @@
 import pickle
 import os
 from functools import wraps
+import itertools as it
 
 def write_tweets(tweets, filename):
+    """Write some useful tweets informations"""
+    
     with open(filename, 'w') as out_file:
         for tweet in tweets:
-            for field, content in tweet.items():
-                out_file.write(field + ' : ' + str(content) + '\n')
-            out_file.write('\n')
+            out_file.write('TEXT: ' + tweet.text.with_headings() + '\n')
+            out_file.write('HASHTAGS: ' + ' '.join(tweet.hashtags) + '\n')
+            if hasattr(tweet, 'exhibition'):
+                out_file.write('EXHIBITION: ' + str(tweet.exhibition) +
+                               '\n\n')
 
 def dump_tweets(tweets, filename):
     """Dump tweets to a binary file"""
@@ -31,6 +36,16 @@ def get_io_args(argparser, output_suffix=''):
     if not args.output_file:
         args.output_file = os.path.splitext(args.input_file)[0]+output_suffix
     return args
+
+def group_by_exhibition(tweets):
+    """Returns a dictionary from exhibitions to tweets"""
+    
+    exh_to_tweets = {}
+    exhibition_key = lambda x: x.exhibition
+    tweets = sorted(tweets, key=exhibition_key)
+    for exhibition, group in it.groupby(tweets, key=exhibition_key):
+        exh_to_tweets[exhibition] = list(group)
+    return exh_to_tweets
     
 if __name__  == '__main__':
     import argparse as ap

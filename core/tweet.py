@@ -79,11 +79,29 @@ class Tweet(dict):
         return fields.RETWEET_COUNT in self
 
     @property
+    def retweet_count(self):
+        return int(self.get(fields.RETWEET_COUNT, 0))
+
+    @property
+    def favorited_count(self):
+        return int(self.get(fields.FAVORITED_COUNT, 0))
+
+    @property
     def hashtags(self):
         if not self._hashtags:
             self._hashtags = self.hashtags_pattern.findall(
                 self[fields.TEXT].lower())
         return self._hashtags
+
+    @property
+    def id(self):
+        return self[fields.TWEET_ID]
+
+    def self_and_retweets(self):
+        return [self] + self.retweets
+
+    def last_retweet(self):
+        return self.retweets[-1] if self.retweets else self
 
     def translate(self, lang, translate_hashtags=True):
         if self[fields.LANG] == lang:
