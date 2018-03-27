@@ -8,8 +8,8 @@ from .exhibitions import TITLES
 sia = SentimentIntensityAnalyzer()
 
 def share(tweet):
-    return (tweet.retweet_count*3 + tweet.favorited_count + 1)**(1/4)
-##           if tweet.is_retweet() else 1
+    return (tweet.retweet_count*3 + tweet.favorited_count)**(1/4) \
+           if tweet.is_retweet() else 1
 
 def polarity(tweet):
     return sia.polarity_scores(tweet.text.replace('#', ''))['compound']
@@ -108,6 +108,12 @@ def popularity_plot(tweets, exhibition):
                  xycoords=('axes fraction', 'data'),
                  textcoords='offset points')
 
+def sentiment_popularity_plot(tweets, exhibition):
+    sentiment_plot(tweets, exhibition)
+    popularity_plot(tweets, exhibition)
+    plt.subplots_adjust(left=0.05, top=0.95, bottom=0.05, right=0.95)
+    plt.show()
+
 if __name__ == "__main__":
     import argparse as ap
     
@@ -116,7 +122,4 @@ if __name__ == "__main__":
     argparser.add_argument('exhibition', type=int)
     args = argparser.parse_args()
     tweets = load_tweets(args.input_file)
-    sentiment_plot(tweets, args.exhibition)
-    popularity_plot(tweets, args.exhibition)
-    plt.subplots_adjust(left=0.05, top=0.95, bottom=0.05, right=0.95)
-    plt.show()
+    sentiment_popularity_plot(tweets, args.exhibition)

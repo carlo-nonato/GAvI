@@ -33,7 +33,7 @@ def parse(filename):
                                tweet.text)
     all_tweets = sorted(all_tweets, key=tweet_key)
     for _, group in it.groupby(all_tweets, key=tweet_key):
-        tweet = next(group) # first one is the retweets leader
+        tweet = next(group) # first one is the leader
         tweet.retweets = list(group)
         tweets.append(tweet)
 
